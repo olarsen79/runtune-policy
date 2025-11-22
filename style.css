@@ -1,0 +1,115 @@
+/* style.css */
+:root {
+    --bg-color: #121212;
+    --card-bg: #1E1E1E;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B0B0B0;
+    --accent-gold: #FFC107; /* O amarelo do RunTune */
+    --accent-hover: #FFD54F;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 2px solid var(--accent-gold);
+}
+
+h1, h2, h3 {
+    color: var(--accent-gold);
+    margin-bottom: 15px;
+}
+
+h1 { font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; }
+h2 { border-left: 4px solid var(--accent-gold); padding-left: 10px; margin-top: 40px;}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Botões e Links */
+.btn {
+    display: inline-block;
+    background-color: var(--accent-gold);
+    color: #000;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s;
+    margin-top: 20px;
+}
+
+.btn:hover { background-color: var(--accent-hover); }
+
+/* Cards e Seções */
+.feature-section {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+/* Imagens e Legendas */
+.screenshot-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.screenshot {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid #333;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.7);
+    max-height: 600px; /* Limita altura para não ocupar a tela toda */
+}
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.icon-item {
+    background: #2C2C2C;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--accent-gold);
+}
+
+/* Página Sobre (Landing) */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+.emotional-text {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    border-top: 1px solid #333;
+    margin-top: 50px;
+}
