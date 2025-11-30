@@ -73,8 +73,69 @@
             </ul>
         </div>
 
+        <div class="feature-section" style="border: 2px solid var(--accent-gold); position: relative; overflow: hidden; min-height: 300px; margin-top: 50px;">
+            
+            <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(255,193,7,0.2) 0%, rgba(0,0,0,0) 70%);"></div>
+
+            <div style="text-align: center; margin-bottom: 30px;">
+                <span class="beta-badge">Acesso Antecipado</span>
+                <h2>Seja um Beta Tester</h2>
+            </div>
+
+            <div id="loading-msg" style="text-align: center; padding: 40px;">
+                <p style="color: #888;">Verificando disponibilidade de vagas...</p>
+            </div>
+
+            <div id="form-container" style="display: none;">
+                <p style="text-align: center;">
+                    Ajude a moldar o futuro do RunTune. Inscreva-se para receber acesso à versão de testes.
+                    <br><span style="color: var(--accent-gold); font-size: 0.8rem;">(Vagas limitadas)</span>
+                </p>
+
+                <form action="https://formspree.io/f/xqaragzg" method="POST" style="max-width: 500px; margin: 0 auto;">
+                    
+                    <div class="form-group">
+                        <label for="name" class="form-label">Nome</label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="Como quer ser chamado?" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">E-mail (Conta Google/Play Store)</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="Necessário para liberar o download" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="device" class="form-label">Modelo do Celular</label>
+                        <input type="text" id="device" name="device" class="form-input" placeholder="Ex: Samsung S23" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="watch" class="form-label">Modelo do Relógio (Opcional)</label>
+                        <input type="text" id="watch" name="watch" class="form-input" placeholder="Ex: Galaxy Watch 4">
+                    </div>
+
+                    <input type="text" name="_gotcha" style="display:none">
+
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button type="submit" class="btn" style="width: 100%; cursor: pointer;">SOLICITAR ACESSO BETA</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="closed-msg" style="display: none; text-align: center; padding: 20px;">
+                <h3 style="color: var(--text-secondary);">🚫 Inscrições Encerradas</h3>
+                <p>
+                    Uau! Atingimos o limite de testadores para esta fase.
+                    <br>Obrigado pelo interesse no RunTune.
+                </p>
+                <p style="color: #666; font-size: 0.9rem;">
+                    Fique de olho, abriremos novos lotes em breve.
+                </p>
+            </div>
+
+        </div>
         <div style="text-align: center; margin-top: 50px;">
-            <a href="instructions.html" class="btn">Ver Manual de Instruções</a>
+            <a href="instructions.html" class="btn" style="background-color: transparent; border: 1px solid var(--accent-gold); color: var(--accent-gold);">Ver Manual de Instruções</a>
             <br><br>
             <a href="privacy.html" style="color: #666; text-decoration: underline; font-size: 0.9rem;">Política de Privacidade</a>
         </div>
@@ -86,7 +147,28 @@
         <p>&copy; 2025 RunTune.</p>
     </footer>
 
+    <script>
+        async function checkStatus() {
+            try {
+                // O timestamp evita cache e garante leitura em tempo real
+                const response = await fetch('status.json?v=' + new Date().getTime());
+                const data = await response.json();
+
+                document.getElementById('loading-msg').style.display = 'none';
+
+                if (data.beta_aberto === true) {
+                    document.getElementById('form-container').style.display = 'block';
+                } else {
+                    document.getElementById('closed-msg').style.display = 'block';
+                }
+            } catch (error) {
+                console.error('Erro ao ler status:', error);
+                document.getElementById('loading-msg').style.display = 'none';
+                document.getElementById('closed-msg').style.display = 'block';
+            }
+        }
+        window.onload = checkStatus;
+    </script>
+
 </body>
 </html>
-
-
