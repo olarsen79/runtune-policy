@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RunTune - A Música te Turbina</title>
     <link rel="stylesheet" href="style.css">
+    
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 
@@ -94,7 +96,7 @@
                 </p>
 
                 <p style="text-align: center; font-size: 0.9rem; margin-bottom: 30px;">
-                    <strong>Benefícios:</strong> Nome nos Créditos + Influência no Design.
+                    <strong>Benefícios:</strong> Acesso Vitalício Premium + Nome nos Créditos + Influência no Design.
                 </p>
 
                 <form action="https://formspree.io/f/xqaragzg" method="POST" style="max-width: 500px; margin: 0 auto;">
@@ -138,9 +140,13 @@
                         <input type="text" id="device" name="device" class="form-input" required>
                     </div>
 
+                    <div class="form-group" style="display: flex; justify-content: center; margin: 20px 0;">
+                        <div class="g-recaptcha" data-sitekey="6Lfzah8sAAAAAOPqEq3rWilLhi-uCQckmZn9p6k6" data-theme="dark"></div>
+                    </div>
+
                     <input type="text" name="_gotcha" style="display:none">
 
-                    <div style="text-align: center; margin-top: 30px;">
+                    <div style="text-align: center; margin-top: 10px;">
                         <button type="submit" class="btn" style="width: 100%; cursor: pointer;">SOLICITAR CONVITE (APLICAÇÃO)</button>
                         <p style="font-size: 0.8rem; color: #666; margin-top: 10px;">Analisaremos seu perfil e entraremos em contato.</p>
                     </div>
@@ -197,4 +203,3 @@
 
 </body>
 </html>
-
