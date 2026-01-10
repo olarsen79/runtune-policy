@@ -4,202 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RunTune - A Música te Turbina</title>
-    <link rel="stylesheet" href="style.css">
-    
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        :root { --accent-gold: #FFD700; --text-primary: #fff; --text-secondary: #ccc; }
+        body { background-color: #000; font-family: sans-serif; margin: 0; padding: 0; color: var(--text-primary); }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        
+        /* Seletor de Idiomas */
+        .lang-nav { text-align: center; padding: 15px; background: #121212; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #333; }
+        .lang-btn { 
+            background: none; border: 1px solid #444; color: #aaa; padding: 6px 12px; 
+            margin: 0 5px; cursor: pointer; border-radius: 20px; transition: 0.3s;
+        }
+        .lang-btn.active { border-color: var(--accent-gold); color: var(--accent-gold); background: rgba(255, 215, 0, 0.1); }
+
+        /* Estilo das Seções */
+        .feature-section { background: #121212; padding: 30px; border-radius: 15px; margin-bottom: 25px; line-height: 1.6; }
+        h2 { color: var(--accent-gold); }
+        .btn { 
+            display: inline-block; padding: 15px 30px; background-color: var(--accent-gold); 
+            color: #000; text-decoration: none; font-weight: bold; border-radius: 8px; margin-top: 20px;
+        }
+        .lang-section { display: none; }
+        .lang-section.active { display: block; }
+        
+        blockquote { border-left: 4px solid var(--accent-gold); padding-left: 20px; color: #fff; font-style: italic; margin: 30px 0; }
+        footer { text-align: center; padding: 40px 20px; color: #666; font-size: 0.9rem; }
+    </style>
 </head>
 <body>
 
+    <nav class="lang-nav">
+        <button class="lang-btn" id="btn-pt" onclick="showLang('pt')">Português</button>
+        <button class="lang-btn" id="btn-en" onclick="showLang('en')">English</button>
+        <button class="lang-btn" id="btn-es" onclick="showLang('es')">Español</button>
+    </nav>
+
     <div style="text-align: center; margin-top: 30px; padding: 20px;">
-        <img src="img/banner_main.png" alt="RunTune - A música te turbina" style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 5px 20px rgba(255, 193, 7, 0.3);">
+        <img src="img/banner_main.png" alt="RunTune" style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 5px 20px rgba(255, 193, 7, 0.3);">
     </div>
 
     <div class="container">
-
-        <div class="feature-section" style="margin-top: 20px;">
-            <h2>Visão Geral</h2>
-            <p>
-                O <strong>RunTune</strong> é um aplicativo de rastreamento de exercícios (corrida/caminhada) para Android, 
-                cujo principal diferencial é a integração profunda com o Spotify.
-            </p>
-            <p>
-                O objetivo é criar um "diário de corridas" que não apenas registra métricas de performance (distância, tempo, rota), 
-                mas também a trilha sonora que acompanhou o usuário, transformando o histórico de atividades em um registro de memórias e sensações.
-            </p>
-        </div>
-
-        <div class="feature-section">
-            <h2>O Diferencial Emocional</h2>
-            <p>
-                O mercado de aplicativos de corrida é dominado por gigantes focados em performance. 
-                Eles são excelentes em registrar métricas, otimizar treinos e fomentar a competição. 
-                No entanto, tratam a música como um mero acessório.
-            </p>
-            <p>
-                É exatamente nesta lacuna que o RunTune se estabelece. Nosso diferencial não é competir em número de funcionalidades, 
-                mas em profundidade de experiência.
-            </p>
-            <blockquote style="border-left: 4px solid var(--accent-gold); padding-left: 20px; color: #fff; font-style: italic; margin: 30px 0;">
-                "Enquanto os outros apps ajudam a responder 'O quão rápido eu corri?', 
-                o RunTune responde a uma pergunta diferente e mais emocional: 'Qual foi a sensação daquela corrida?'"
-            </blockquote>
-            <p>
-                O RunTune transforma a trilha sonora de um elemento passageiro para um dado fundamental e permanente da atividade. 
-                Um diário de corridas que não é apenas sobre números, mas sobre memórias.
-            </p>
-        </div>
-
-        <div class="icon-grid" style="margin-bottom: 40px;">
-            <div class="icon-item" style="text-align: left;">
-                <h3 style="font-size: 1.2rem;">❤️ Conexão Emocional</h3>
-                <p style="font-size: 0.9rem; color: #ccc;">
-                    Revisite uma corrida de meses atrás e seja transportado de volta para a energia daquele momento. 
-                    Identifique qual música te ajudou a superar aquele quilômetro difícil.
-                </p>
-            </div>
-            <div class="icon-item" style="text-align: left;">
-                <h3 style="font-size: 1.2rem;">🗺️ Nova Camada de Análise</h3>
-                <p style="font-size: 0.9rem; color: #ccc;">
-                    Uma visualização de dados única: veja no mapa onde "For Whom The Bell Tolls" começou e onde "Dani California" terminou. 
-                    A música colorindo o seu trajeto.
-                </p>
+        
+        <div id="pt" class="lang-section active">
+            <div class="feature-section">
+                <h2>A Música te Turbina</h2>
+                <p>O <strong>RunTune</strong> é um rastreador de exercícios que transforma sua corrida em memórias musicais. Compatível com <strong>Spotify, Deezer, Amazon Music e Youtube Music</strong>.</p>
+                <blockquote>"Enquanto os outros apps dizem o quão rápido você correu, o RunTune mostra qual foi a sensação daquela corrida."</blockquote>
+                <p>Compatível com Android e relógios <strong>Wear OS</strong>.</p>
+                <div style="text-align: center;">
+                    <a href="https://groups.google.com/g/SEU-GRUPO" class="btn">PARTICIPAR DO TESTE BETA</a>
+                </div>
             </div>
         </div>
 
-        <div class="feature-section" style="border: 1px solid #333;">
-            <h3 style="color: var(--text-primary); margin-top: 0;">Disponibilidade e Requisitos</h3>
-            <ul style="color: var(--text-secondary);">
-                <li><strong>Sistema:</strong> Exclusivo para <strong>Android</strong>.</li>
-                <li><strong>Música:</strong> Requer conta no <strong>Spotify</strong> (Funciona perfeitamente com contas <strong>Grátis</strong> ou Premium).</li>
-                <li><strong>Wearables:</strong> Compatível com relógios <strong>Wear OS</strong> (como Galaxy Watch 4 e superiores).</li>
-            </ul>
+        <div id="en" class="lang-section">
+            <div class="feature-section">
+                <h2>Music Powers You</h2>
+                <p><strong>RunTune</strong> is a fitness tracker that turns your runs into musical memories. Works with <strong>Spotify, Deezer, Amazon Music, and Youtube Music</strong>.</p>
+                <blockquote>"While other apps tell you how fast you ran, RunTune shows you how that run felt."</blockquote>
+                <p>Compatible with Android and <strong>Wear OS</strong> smartwatches.</p>
+                <div style="text-align: center;">
+                    <a href="https://groups.google.com/g/SEU-GRUPO" class="btn">JOIN BETA TESTING</a>
+                </div>
+            </div>
         </div>
 
-        <div class="feature-section" style="border: 2px solid var(--accent-gold); position: relative; overflow: hidden; min-height: 300px; margin-top: 50px;">
-            
-            <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(255,193,7,0.2) 0%, rgba(0,0,0,0) 70%);"></div>
-
-            <div style="text-align: center; margin-bottom: 30px;">
-                <span class="beta-badge" style="background-color: #fff; color: #000;">25 Vagas Apenas</span>
-                <span class="beta-badge">Alpha Fechado</span>
-                <h2 style="margin-top: 10px;">Torne-se um Membro Fundador</h2>
+        <div id="es" class="lang-section">
+            <div class="feature-section">
+                <h2>La Música te Impulsa</h2>
+                <p><strong>RunTune</strong> es un rastreador de ejercicios que convierte tus carreras en recuerdos musicales. Compatible con <strong>Spotify, Deezer, Amazon Music y Youtube Music</strong>.</p>
+                <blockquote>"Mientras otras apps te dicen qué tan rápido corriste, RunTune te muestra cómo se sintió esa carrera."</blockquote>
+                <p>Compatible con Android y relojes <strong>Wear OS</strong>.</p>
+                <div style="text-align: center;">
+                    <a href="https://groups.google.com/g/SEU-GRUPO" class="btn">UNIRSE AL TEST BETA</a>
+                </div>
             </div>
-
-            <div id="loading-msg" style="text-align: center; padding: 40px;">
-                <p style="color: #888;">Verificando disponibilidade de vagas...</p>
-            </div>
-
-            <div id="form-container" style="display: none;">
-                <p style="text-align: center; max-width: 600px; margin: 0 auto 30px auto;">
-                    Não buscamos atletas de elite. Buscamos pessoas que sentem a corrida.<br>
-                    <em style="color: var(--accent-gold);">"Não pergunte apenas qual foi seu pace. Pergunte qual foi a sensação."</em>
-                </p>
-
-                <p style="text-align: center; font-size: 0.9rem; margin-bottom: 30px;">
-                    <strong>Benefícios:</strong> Acesso Vitalício Premium + Nome nos Créditos + Influência no Design.
-                </p>
-
-                <form action="https://formspree.io/f/xqaragzg" method="POST" style="max-width: 500px; margin: 0 auto;">
-                    
-                    <div class="form-group">
-                        <label for="name" class="form-label">Nome</label>
-                        <input type="text" id="name" name="name" class="form-input" placeholder="Seu nome" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email" class="form-label">E-mail (Google/Play Store)</label>
-                        <input type="email" id="email" name="email" class="form-input" placeholder="Para liberarmos o download" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="current_app" class="form-label">Qual app de corrida você usa hoje?</label>
-                        <input type="text" id="current_app" name="current_app" class="form-input" placeholder="Ex: Strava, Nike Run, Adidas..." required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="music_importance" class="form-label">De 0 a 10, qual a importância da música na sua corrida?</label>
-                        <select id="music_importance" name="music_importance" class="form-input" style="background-color: #000; color: #fff;" required>
-                            <option value="" disabled selected>Selecione uma nota</option>
-                            <option value="10 - Essencial (Não corro sem)">10 - Essencial (Não corro sem)</option>
-                            <option value="7-9 - Muito Importante">7-9 - Muito Importante</option>
-                            <option value="4-6 - Às vezes ouço">4-6 - Às vezes ouço</option>
-                            <option value="0-3 - Prefiro silêncio">0-3 - Prefiro silêncio</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="spotify_type" class="form-label">Qual sua conta no Spotify?</label>
-                        <select id="spotify_type" name="spotify_type" class="form-input" style="background-color: #000; color: #fff;" required>
-                            <option value="Premium">Spotify Premium</option>
-                            <option value="Free">Spotify Free</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="device" class="form-label">Modelo do Celular</label>
-                        <input type="text" id="device" name="device" class="form-input" required>
-                    </div>
-
-                    <div class="form-group" style="display: flex; justify-content: center; margin: 20px 0;">
-                        <div class="g-recaptcha" data-sitekey="6Lfzah8sAAAAAOPqEq3rWilLhi-uCQckmZn9p6k6" data-theme="dark"></div>
-                    </div>
-
-                    <input type="text" name="_gotcha" style="display:none">
-
-                    <div style="text-align: center; margin-top: 10px;">
-                        <button type="submit" class="btn" style="width: 100%; cursor: pointer;">SOLICITAR CONVITE (APLICAÇÃO)</button>
-                        <p style="font-size: 0.8rem; color: #666; margin-top: 10px;">Analisaremos seu perfil e entraremos em contato.</p>
-                    </div>
-                </form>
-            </div>
-
-            <div id="closed-msg" style="display: none; text-align: center; padding: 40px;">
-                <h3 style="color: var(--text-secondary); margin-bottom: 20px;">🔒 Seleção Encerrada</h3>
-                <p>
-                    Recebemos um volume incrível de histórias inspiradoras.
-                    <br>As 25 vagas para Membros Fundadores já foram preenchidas.
-                </p>
-                <p style="color: #666; margin-top: 20px;">
-                    Agradecemos o interesse. Fique ligado para a próxima abertura.
-                </p>
-            </div>
-
         </div>
-        <div style="text-align: center; margin-top: 50px;">
-            <a href="instructions.html" class="btn" style="background-color: transparent; border: 1px solid var(--accent-gold); color: var(--accent-gold);">Ver Manual de Instruções</a>
-            <br><br>
-            <a href="privacy.html" style="color: #666; text-decoration: underline; font-size: 0.9rem;">Política de Privacidade</a>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="instructions.html" style="color: var(--accent-gold); text-decoration: none; margin: 0 10px;">Manual</a>
+            <a href="privacy.html" style="color: var(--accent-gold); text-decoration: none; margin: 0 10px;">Privacy Policy</a>
         </div>
 
     </div>
 
     <footer>
-        <p>O RunTune não é para o atleta de elite que vive de planilhas, mas para quem entende que a música é a alma da corrida.</p>
-        <p>&copy; 2025 RunTune.</p>
+        <p>&copy; 2026 RunTune. A música é a alma da corrida.</p>
     </footer>
 
     <script>
-        async function checkStatus() {
-            try {
-                // O timestamp evita cache e garante leitura em tempo real
-                const response = await fetch('status.json?v=' + new Date().getTime());
-                const data = await response.json();
-
-                document.getElementById('loading-msg').style.display = 'none';
-
-                if (data.beta_aberto === true) {
-                    document.getElementById('form-container').style.display = 'block';
-                } else {
-                    document.getElementById('closed-msg').style.display = 'block';
-                }
-            } catch (error) {
-                console.error('Erro ao ler status:', error);
-                document.getElementById('loading-msg').style.display = 'none';
-                document.getElementById('closed-msg').style.display = 'block';
-            }
+        function showLang(lang) {
+            document.querySelectorAll('.lang-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(lang).classList.add('active');
+            document.getElementById('btn-' + lang).classList.add('active');
         }
-        window.onload = checkStatus;
-    </script>
 
+        window.onload = function() {
+            const userLang = navigator.language || navigator.userLanguage; 
+            if (userLang.startsWith('pt')) showLang('pt');
+            else if (userLang.startsWith('es')) showLang('es');
+            else showLang('en');
+        }
+    </script>
 </body>
 </html>
