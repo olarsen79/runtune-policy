@@ -3,117 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manual do RunTune</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Manual RunTune - Guia de Utilização</title>
+    <style>
+        :root { --accent-gold: #FFD700; --bg-card: #121212; --text-primary: #fff; --text-secondary: #ccc; }
+        body { background-color: #000; font-family: sans-serif; margin: 0; padding: 0; color: var(--text-primary); scroll-behavior: smooth; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        
+        /* Navegação de Idiomas */
+        .lang-nav { text-align: center; padding: 15px; background: #121212; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #333; }
+        .lang-btn { background: none; border: 1px solid #444; color: #aaa; padding: 6px 12px; margin: 0 5px; cursor: pointer; border-radius: 20px; transition: 0.3s; }
+        .lang-btn.active { border-color: var(--accent-gold); color: var(--accent-gold); background: rgba(255, 215, 0, 0.1); }
+
+        /* Estilo das Seções */
+        .lang-section { display: none; }
+        .lang-section.active { display: block; }
+        .feature-section { background: var(--bg-card); padding: 30px; border-radius: 15px; margin-bottom: 30px; line-height: 1.6; border: 1px solid #222; }
+        h2 { color: var(--accent-gold); border-bottom: 1px solid #333; padding-bottom: 10px; }
+        h3 { color: var(--accent-gold); margin-top: 25px; }
+        
+        /* Modos de Funcionamento */
+        .mode-card { background: #1a1a1a; padding: 20px; border-radius: 10px; margin: 15px 0; border-left: 4px solid var(--accent-gold); }
+        .mode-card strong { color: var(--accent-gold); display: block; margin-bottom: 5px; font-size: 1.1rem; }
+        
+        /* Links Externos */
+        .external-link { color: var(--accent-gold); text-decoration: underline; font-weight: bold; }
+        
+        /* Imagens */
+        .screenshot { max-width: 300px; height: auto; border-radius: 10px; border: 2px solid #333; display: block; margin: 20px auto; }
+        .img-caption { text-align: center; font-size: 0.9rem; color: #888; margin-top: -10px; margin-bottom: 20px; }
+
+        footer { text-align: center; padding: 40px 20px; color: #666; font-size: 0.9rem; }
+    </style>
 </head>
 <body>
 
-    <header style="text-align: center; padding: 30px 20px; border-bottom: 2px solid var(--accent-gold);">
-        <img src="img/logo_header.png" alt="RunTune Logo" style="max-width: 250px; height: auto; margin-bottom: 10px;">
-        
-        <p style="margin-top: 0; color: #ccc;">Manual Oficial de Utilização</p>
-        <a href="index.html" style="color: var(--accent-gold); text-decoration: none; font-weight: bold;">&larr; Voltar para Início</a>
-    </header>
+    <nav class="lang-nav">
+        <button class="lang-btn" id="btn-pt" onclick="showLang('pt')">Português</button>
+        <button class="lang-btn" id="btn-en" onclick="showLang('en')">English</button>
+        <button class="lang-btn" id="btn-es" onclick="showLang('es')">Español</button>
+    </nav>
 
     <div class="container">
+        
+        <div id="pt" class="lang-section active">
+            <header style="text-align: center; margin-bottom: 40px;">
+                <h1>Manual de Instruções</h1>
+                <p>Aprenda a configurar e extrair o máximo do RunTune.</p>
+            </header>
 
-        <div class="feature-section">
-            <h2>1. Primeiros Passos e Permissões</h2>
-            <p>Ao instalar o RunTune, o aplicativo solicitará permissões essenciais:</p>
-            <ul>
-                <li><strong>Localização (GPS):</strong> Necessário para traçar sua rota. Selecione "Permitir durante o uso do app".</li>
-                <li><strong>Atividade Física:</strong> Para contagem de passos.</li>
-                <li><strong>Notificações:</strong> Para controle via barra de status.</li>
-            </ul>
+            <section class="feature-section">
+                <h2>1. Modos de Funcionamento</h2>
+                <p>O RunTune se adapta à sua forma de treinar. Existem três maneiras principais de usar o aplicativo:</p>
+                
+                <div class="mode-card">
+                    <strong>📱 Celular Standalone</strong>
+                    Tudo é feito no celular: você inicia o exercício e escuta música no mesmo aparelho. O RunTune identifica as faixas pelas notificações do sistema e as mapeia para o seu trajeto.
+                </div>
+
+                <div class="mode-card">
+                    <strong>⌚ Relógio + 📱 Celular</strong>
+                    Você leva o celular para ouvir música, mas controla o exercício pelo Smartwatch. O app sincroniza a música do celular com o GPS do relógio.
+                </div>
+
+                <div class="mode-card" style="border-left-color: #ff4444;">
+                    <strong>🏃 Relógio Standalone (Independente)</strong>
+                    Apenas o relógio é usado. **Atenção:** Requer conta **Last.fm** com *scrobbling* ativo para Spotify ou Deezer Premium. É necessário configurar sua conta Last.fm nas telas de Configuração tanto do celular quanto do relógio.
+                </div>
+
+                <p>Links úteis para o Modo Standalone:</p>
+                <ul>
+                    <li>Crie sua conta: <a href="https://www.last.fm/home" class="external-link" target="_blank">Last.fm</a></li>
+                    <li>Como configurar o scrobbling: <a href="https://support.last.fm/t/spotify-scrobbling/189" class="external-link" target="_blank">Guia de Configuração</a></li>
+                </ul>
+            </section>
+
+            <section class="feature-section">
+                <h2>2. Celular: Tela Principal</h2>
+                <img src="img/C01-TelaPrincipal.jpeg" alt="Tela Principal Celular" class="screenshot">
+                <p class="img-caption">Interface Principal do RunTune no Celular</p>
+                <ul>
+                    <li><strong>Começar Corrida:</strong> Inicia o monitoramento do exercício imediatamente.</li>
+                    <li><strong>Histórico:</strong> Acesso rápido a todas as suas atividades salvas.</li>
+                    <li><strong>Preparar Música:</strong> Atalhos para abrir seus apps favoritos. Se um app (como o Amazon) não estiver instalado, o ícone não aparecerá.</li>
+                    <li><strong>Navegação Inferior:</strong> Alterne rapidamente entre Home, Exercício, Histórico, Debug e Configurações.</li>
+                </ul>
+            </section>
         </div>
 
-        <div class="feature-section">
-            <h2>2. A Tela Principal (Home)</h2>
-            <div class="screenshot-container">
-                <img src="img/TelaPrincipal.jpg" alt="Tela Principal do RunTune" class="screenshot">
-            </div>
-            <ul>
-                <li><strong>Começar Corrida:</strong> Inicia uma nova atividade.</li>
-                <li><strong>Histórico:</strong> Acesso às corridas salvas.</li>
-                <li><strong>Status do Spotify:</strong> Toque para conectar sua conta (Grátis ou Premium).</li>
-            </ul>
+        <div id="en" class="lang-section">
+            <header style="text-align: center; margin-bottom: 40px;">
+                <h1>Instruction Manual</h1>
+                <p>Learn how to configure and get the most out of RunTune.</p>
+            </header>
+
+            <section class="feature-section">
+                <h2>1. Operating Modes</h2>
+                <div class="mode-card">
+                    <strong>📱 Standalone Phone</strong>
+                    Everything happens on your phone: start the workout and listen to music on the same device.
+                </div>
+                <div class="mode-card">
+                    <strong>⌚ Watch + 📱 Phone</strong>
+                    Listen to music on your phone and track the exercise on your Smartwatch.
+                </div>
+                <div class="mode-card">
+                    <strong>🏃 Standalone Watch</strong>
+                    Only the watch is used. **Requires Last.fm account** with active scrobbling.
+                </div>
+            </section>
+
+            <section class="feature-section">
+                <h2>2. Phone: Main Screen</h2>
+                <img src="img/C01-TelaPrincipal.jpeg" alt="Main Screen" class="screenshot">
+                <ul>
+                    <li><strong>Start Run:</strong> Starts tracking immediately.</li>
+                    <li><strong>History:</strong> Quick access to saved activities.</li>
+                    <li><strong>Music Prep:</strong> Shortcuts to your music apps. Icons only show if the app is installed.</li>
+                </ul>
+            </section>
         </div>
 
-        <div class="feature-section">
-            <h2>3. Durante a Corrida</h2>
-            <div class="screenshot-container">
-                <img src="img/TelaCorridaCelular.jpg" alt="Tela de Corrida" class="screenshot">
-            </div>
-            <p>Acompanhe sua rota em tempo real, controle o ritmo e visualize qual música está tocando no momento.</p>
-        </div>
+        <div id="es" class="lang-section">
+            <header style="text-align: center; margin-bottom: 40px;">
+                <h1>Manual de Instrucciones</h1>
+                <p>Aprende a configurar y sacar el máximo provecho de RunTune.</p>
+            </header>
 
-        <div class="feature-section">
-            <h2>4. Seu Histórico</h2>
-            <div class="screenshot-container">
-                <img src="img/TelaCorridasSalvas.jpg" alt="Lista de Histórico" class="screenshot">
-            </div>
-            <p><strong>Gerenciamento de Dados:</strong></p>
-            <ul>
-                <li>Toque em um cartão para ver os detalhes.</li>
-                <li><strong>Botão Importar Corrida:</strong> Localizado no topo, serve para restaurar uma corrida que você tenha exportado anteriormente (arquivo de backup).</li>
-            </ul>
-        </div>
-
-        <div class="feature-section">
-            <h2>5. Detalhes e Ferramentas</h2>
-            <p>Ao abrir uma corrida, você tem acesso ao <strong>Mapa Musical</strong> e a uma barra de ferramentas poderosa no topo da tela.</p>
-
-            <h3>Barra de Ferramentas (Ícones Superiores)</h3>
-            <div class="icon-grid">
-                <div class="icon-item"><strong>🎵 Exportar Playlist</strong><br>Cria uma playlist no seu Spotify com as músicas desta corrida.</div>
-                <div class="icon-item"><strong>🔄 Recarregar</strong><br>Recarrega os dados da corrida atual caso algo não tenha atualizado.</div>
-                <div class="icon-item"><strong>📄 Relatório PDF</strong><br>Gera um documento PDF completo com o resumo do exercício.</div>
-                <div class="icon-item"><strong>📥 Exportar Dados</strong><br>Baixa um arquivo de backup da corrida para importar em outro dispositivo.</div>
-                <div class="icon-item"><strong>🔗 Compartilhar</strong><br>Gera uma imagem da <strong>aba que você está vendo</strong> (Resumo, Mapa ou Setlist) para postar nas redes.</div>
-                <div class="icon-item"><strong>🗑️ Excluir</strong><br>Apaga permanentemente este registro.</div>
-            </div>
-            
-            <br>
-
-            <h3>O Mapa Musical e Setlist</h3>
-            <div class="screenshot-container">
-                <img src="img/TelaMapaMusical.jpg" alt="Mapa Musical" class="screenshot">
-            </div>
-            <p>Visualize onde cada música tocou no seu trajeto.</p>
-            
-            <div style="background-color: #2C2C2C; padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent-gold); margin-top: 20px;">
-                <strong>Dica Pro:</strong> Na aba "Setlist" (Trilha Sonora), existe o botão <em>"Recarregar setlist via Spotify"</em>. 
-                Use-o caso as músicas não tenham aparecido automaticamente; o app tentará buscar o histórico recente no servidor do Spotify.
-            </div>
-        </div>
-
-        <div class="feature-section">
-            <h2>6. RunTune no Relógio (Wear OS)</h2>
-            <p>A experiência completa no seu pulso. O app para relógio funciona de forma independente, permitindo que você corra sem o celular.</p>
-
-            <h3>Menus e Seleção de Atividade</h3>
-            <p>Ao abrir o app no relógio, você pode escolher entre diversos tipos de atividade (Corrida, Caminhada, Ciclismo, Esteira, etc.) e acessar o histórico local.</p>
-            <div class="screenshot-container">
-                 <img src="img/watch_grid_menu.png" alt="Menus do relógio Wear OS" class="screenshot">
-            </div>
-
-            <h3>Durante a Corrida e Sincronização</h3>
-            <p>Durante o exercício, você vê métricas em tempo real (tela preta). Ao finalizar, o relógio exibe o resumo e inicia o processo de envio para o celular (telas amarelas/escuras).</p>
-            <div class="screenshot-container">
-                 <img src="img/watch_grid_sync.png" alt="Telas de exercício e sincronização no relógio" class="screenshot">
-            </div>
-            <ul>
-                <li><strong>Tela de Resumo (Amarela):</strong> Indica que o treino foi finalizado e está pronto para ser enviado.</li>
-                <li><strong>Status "Enviada":</strong> Confirma que os dados já foram transferidos para o celular.</li>
-                <li><strong>Importante:</strong> Abra o app no celular após a corrida para garantir que os dados sejam processados no seu histórico principal.</li>
-            </ul>
+            <section class="feature-section">
+                <h2>1. Modos de Funcionamiento</h2>
+                <div class="mode-card">
+                    <strong>📱 Celular Standalone</strong>
+                    Todo se hace en el teléfono: inicias el ejercicio y escuchas música en el mismo dispositivo.
+                </div>
+                <div class="mode-card">
+                    <strong>⌚ Reloj + 📱 Celular</strong>
+                    Escuchas música en el móvil y controlas el ejercicio desde el Smartwatch.
+                </div>
+                <div class="mode-card">
+                    <strong>🏃 Reloj Standalone</strong>
+                    Solo se usa el reloj. **Requiere cuenta de Last.fm** con scrobbling activo.
+                </div>
+            </section>
         </div>
 
     </div>
 
-    <footer>
-        <p>&copy; 2025 RunTune. A música te turbina.</p>
-    </footer>
+    <footer><p>&copy; 2026 RunTune.</p></footer>
 
+    <script>
+        function showLang(lang) {
+            document.querySelectorAll('.lang-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(lang).classList.add('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+        }
+        window.onload = function() {
+            const userLang = navigator.language || navigator.userLanguage; 
+            if (userLang.startsWith('pt')) showLang('pt');
+            else if (userLang.startsWith('es')) showLang('es');
+            else showLang('en');
+        }
+    </script>
 </body>
 </html>
