@@ -3,125 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidade - RunTune</title>
+    <title>Privacy Policy - RunTune</title>
     <style>
-        /* Ajustes para leitura de texto longo no modo escuro */
-        body { background-color: #000; font-family: sans-serif; margin: 0; padding: 0; }
+        /* Estilos Base e Modo Escuro */
+        :root { --accent-gold: #FFD700; }
+        body { background-color: #000; font-family: sans-serif; margin: 0; padding: 0; color: #e0e0e0; }
         .container { max-width: 800px; margin: 0 auto; padding: 20px; }
-        .legal-text {
-            color: #e0e0e0;
-            text-align: left;
-            line-height: 1.8;
+        
+        header { text-align: center; padding: 30px 20px; border-bottom: 2px solid var(--accent-gold); }
+        footer { text-align: center; padding: 20px; color: #888; font-size: 0.9em; border-top: 1px solid #333; margin-top: 40px; }
+
+        /* Seletor de Idiomas */
+        .lang-nav { text-align: center; padding: 20px; background: #121212; position: sticky; top: 0; z-index: 100; }
+        .lang-btn { 
+            background: none; border: 1px solid #444; color: #aaa; padding: 8px 16px; 
+            margin: 0 5px; cursor: pointer; border-radius: 20px; transition: 0.3s;
         }
-        .legal-text h1 {
-            color: #FFD700; /* accent-gold substitute */
-            border-bottom: 1px solid #333;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
-        .legal-text h2, .legal-text h3, .legal-text h4 {
-            color: #FFD700;
-            margin-top: 40px;
-            margin-bottom: 15px;
-        }
-        .legal-text ul {
-            background-color: #121212;
-            padding: 20px 40px;
-            border-radius: 8px;
-            border-left: 2px solid #FFD700;
-        }
-        .legal-text li {
-            margin-bottom: 10px;
-        }
-        .legal-text strong {
-            color: #fff;
-        }
-        .legal-text a {
-            color: #FFD700;
-            text-decoration: underline;
-        }
-        header { text-align: center; padding: 30px 20px; border-bottom: 2px solid #FFD700; }
-        footer { text-align: center; padding: 20px; color: #888; font-size: 0.9em; }
+        .lang-btn.active { border-color: var(--accent-gold); color: var(--accent-gold); background: rgba(255, 215, 0, 0.1); }
+        
+        /* Texto Legal */
+        .legal-text { line-height: 1.8; text-align: left; }
+        .legal-text h1 { color: var(--accent-gold); border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 30px; }
+        .legal-text h2 { color: var(--accent-gold); margin-top: 40px; }
+        .legal-text ul { background-color: #121212; padding: 20px 40px; border-radius: 8px; border-left: 2px solid var(--accent-gold); list-style: none; }
+        .legal-text li { margin-bottom: 10px; }
+        .legal-text li::before { content: "•"; color: var(--accent-gold); font-weight: bold; display: inline-block; width: 1em; margin-left: -1em; }
+        .legal-text strong { color: #fff; }
+        .legal-text a { color: var(--accent-gold); text-decoration: underline; }
+
+        /* Controle de Exibição */
+        .lang-section { display: none; }
+        .lang-section.active { display: block; }
     </style>
 </head>
 <body>
 
     <header>
         <img src="img/logo_header.png" alt="RunTune Logo" style="max-width: 250px; height: auto; margin-bottom: 10px;">
-        <p style="margin-top: 0; color: #ccc;">Documentação Legal</p>
-        <a href="index.html" style="color: #FFD700; text-decoration: none; font-weight: bold;">&larr; Voltar para Início</a>
+        <p style="margin-top: 0; color: #ccc;">Legal Documentation</p>
     </header>
 
-    <div class="container">
+    <nav class="lang-nav">
+        <button class="lang-btn" id="btn-pt" onclick="showLang('pt')">Português</button>
+        <button class="lang-btn" id="btn-en" onclick="showLang('en')">English</button>
+        <button class="lang-btn" id="btn-es" onclick="showLang('es')">Español</button>
+    </nav>
 
-        <div class="feature-section legal-text">
-            
+    <div class="container">
+        <div id="pt" class="lang-section legal-text">
             <h1>Política de Privacidade</h1>
             <p><strong>Última atualização:</strong> 10 de janeiro de 2026</p>
-
-            <p>Bem-vindo ao RunTune. Esta Política de Privacidade descreve como suas informações são coletadas, usadas e tratadas quando Você usa nosso aplicativo.</p>
-            <p>Ao usar o Serviço, Você concorda com a coleta e uso de informações de acordo com esta Política de Privacidade.</p>
-
-            <h2>Definições</h2>
+            <p>Bem-vindo ao RunTune. Esta Política descreve como tratamos seus dados.</p>
+            <h2>1. Coleta de Dados</h2>
             <ul>
-                <li><strong>Aplicativo</strong> refere-se ao RunTune, o programa de software que você está usando.</li>
-                <li><strong>Empresa</strong> (referida como "Nós") refere-se ao RunTune.</li>
-                <li><strong>Você</strong> significa o indivíduo que acessa ou usa o Serviço.</li>
-                <li><strong>Dados Pessoais</strong> é qualquer informação relacionada a Você, como dados de atividade, localização ou conta.</li>
-                <li><strong>Serviço</strong> refere-se ao Aplicativo.</li>
+                <li><strong>Localização (GPS):</strong> Para mapear trajeto e ritmo.</li>
+                <li><strong>Atividade Física:</strong> Passos, distância e velocidade.</li>
+                <li><strong>Música:</strong> Integração via sistema ou Last.fm para associar faixas ao exercício.</li>
             </ul>
-
-            <h2>Coleta, Uso e Armazenamento de Dados</h2>
-            <p>O RunTune foi construído com a sua privacidade em primeiro lugar.</p>
-
-            <h3>1. Tipos de Dados Coletados</h3>
-            <p>Para fornecer os recursos do Aplicativo, podemos coletar, <strong>com Sua permissão prévia</strong>:</p>
-            <ul>
-                <li><strong>Informações sobre sua Localização (GPS):</strong> Usamos o GPS do seu dispositivo para mapear seu trajeto, calcular a distância e o ritmo durante uma atividade física.</li>
-                <li><strong>Dados de Atividade Física:</strong> Coletamos dados gerados durante o uso, como duração, distância, passos e velocidade, para registrar seu histórico de exercícios.</li>
-                <li><strong>Dados de Reprodução Musical:</strong> Para conectar sua atividade física com a música, o Aplicativo coleta informações sobre as faixas reproduzidas. Isso pode ser feito via integração direta com o sistema operacional ou através de serviços de terceiros, como o <strong>Last.fm</strong>.</li>
-            </ul>
-
-            <h3>2. Integração com Last.fm e Wear OS</h3>
-            <p>Para funcionalidades de mapeamento de música em dispositivos Wear OS (Smartwatches), o Aplicativo pode utilizar a API do Last.fm para consultar o histórico de reprodução (scrobbling). O uso desta função requer que o usuário possua uma conta no Last.fm e autorize a conexão no Aplicativo.</p>
-
-            <h3>3. Onde seus Dados são Armazenados</h3>
-            <p>A maioria dos Dados Pessoais (localização e atividade) é <strong>armazenada exclusivamente no seu dispositivo local</strong>.</p>
-            <p>A Empresa <strong>não</strong> possui servidores próprios para onde esses dados são enviados e não tem acesso ao seu histórico pessoal. No caso de integrações com serviços de terceiros (como Last.fm), apenas os identificadores necessários para a sincronização musical são transmitidos aos servidores desses serviços, conforme sua autorização.</p>
-
-            <h3>4. Compartilhamento de Dados</h3>
-            <p>O RunTune <strong>não vende ou transfere</strong> seus Dados Pessoais para parceiros ou afiliados. O único compartilhamento de dados que ocorre é iniciado ativamente por Você através de funções de "Compartilhar" ou pela ativação consciente de serviços de sincronização de terceiros.</p>
-
-            <h2>Serviços de Terceiros</h2>
-            <p>O RunTune interage com APIs de terceiros (como Last.fm, Spotify ou Deezer) para prover a sincronização musical. Ao utilizar essas integrações:</p>
-            <ul>
-                <li>Você também está sujeito à Política de Privacidade de cada serviço respectivo.</li>
-                <li>Nós não armazenamos suas senhas; a autenticação é feita via tokens de acesso seguros.</li>
-                <li>Não assumimos responsabilidade pelo conteúdo ou práticas de privacidade de serviços de terceiros.</li>
-            </ul>
-
-            <h2>Segurança dos Seus Dados Pessoais</h2>
-            <p>Como seus dados sensíveis estão armazenados majoritariamente de forma local, a segurança deles depende da proteção do seu próprio dispositivo.</p>
-
-            <h2>Privacidade Infantil</h2>
-            <p>Nosso Serviço não se destina a menores de 13 anos. Não coletamos intencionalmente informações de identificação pessoal de crianças.</p>
-
-            <h2>Alterações a esta Política de Privacidade</h2>
-            <p>Podemos atualizar Nossa Política de Privacidade periodicamente. Notificaremos Você publicando a nova versão nesta página.</p>
-
-            <h2>Contate-Nos</h2>
-            <p>Dúvidas sobre esta Política podem ser enviadas para:</p>
-            <ul>
-                <li>E-mail: <a href="mailto:larsentech25@gmail.com">larsentech25@gmail.com</a></li>
-            </ul>
-
+            <h2>2. Armazenamento</h2>
+            <p>Dados de GPS e atividade são <strong>armazenados localmente</strong> no seu dispositivo. Não possuímos servidores de cópia de segurança pessoal.</p>
+            <h2>3. Serviços de Terceiros</h2>
+            <p>Ao usar Last.fm, Spotify ou Deezer, você está sujeito às políticas deles. A autenticação é feita via tokens seguros.</p>
         </div>
 
+        <div id="en" class="lang-section legal-text">
+            <h1>Privacy Policy</h1>
+            <p><strong>Last updated:</strong> January 10, 2026</p>
+            <p>Welcome to RunTune. This Policy describes how we handle your data.</p>
+            <h2>1. Data Collection</h2>
+            <ul>
+                <li><strong>Location (GPS):</strong> To map your route and pace.</li>
+                <li><strong>Physical Activity:</strong> Steps, distance, and speed.</li>
+                <li><strong>Music:</strong> Integration via system or Last.fm to associate tracks with your workout.</li>
+            </ul>
+            <h2>2. Storage</h2>
+            <p>GPS and activity data are <strong>stored locally</strong> on your device. We do not maintain personal backup servers.</p>
+            <h2>3. Third-Party Services</h2>
+            <p>By using Last.fm, Spotify, or Deezer, you are subject to their respective policies. Authentication is handled via secure tokens.</p>
+        </div>
+
+        <div id="es" class="lang-section legal-text">
+            <h1>Política de Privacidad</h1>
+            <p><strong>Última actualización:</strong> 10 de enero de 2026</p>
+            <p>Bienvenido a RunTune. Esta Política describe cómo tratamos sus datos.</p>
+            <h2>1. Recopilación de Datos</h2>
+            <ul>
+                <li><strong>Ubicación (GPS):</strong> Para mapear la ruta y el ritmo.</li>
+                <li><strong>Actividad Física:</strong> Pasos, distancia y velocidad.</li>
+                <li><strong>Música:</strong> Integración vía sistema o Last.fm para asociar canciones al ejercicio.</li>
+            </ul>
+            <h2>2. Almacenamiento</h2>
+            <p>Los datos de GPS y actividad se <strong>almacenan localmente</strong> en su dispositivo. No tenemos servidores de respaldo personal.</p>
+            <h2>3. Servicios de Terceros</h2>
+            <p>Al usar Last.fm, Spotify o Deezer, usted está sujeto a sus respectivas políticas. La autenticación se realiza mediante tokens seguros.</p>
+        </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 RunTune. A música te turbina.</p>
+        <p>&copy; 2026 RunTune. The music powers you.</p>
     </footer>
 
+    <script>
+        function showLang(lang) {
+            // Esconder todas as seções
+            document.querySelectorAll('.lang-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            
+            // Mostrar a selecionada
+            document.getElementById(lang).classList.add('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+        }
+
+        // Lógica de Detecção Automática
+        window.onload = function() {
+            const userLang = navigator.language || navigator.userLanguage; 
+            
+            if (userLang.startsWith('pt')) {
+                showLang('pt');
+            } else if (userLang.startsWith('es')) {
+                showLang('es');
+            } else {
+                showLang('en'); // Padrão Inglês para qualquer outro caso
+            }
+        }
+    </script>
 </body>
 </html>
