@@ -9,7 +9,6 @@
         body { background-color: #000; font-family: sans-serif; margin: 0; padding: 0; color: var(--text-primary); }
         .container { max-width: 800px; margin: 0 auto; padding: 20px; }
         
-        /* Seletor de Idiomas */
         .lang-nav { text-align: center; padding: 15px; background: #121212; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #333; }
         .lang-btn { 
             background: none; border: 1px solid #444; color: #aaa; padding: 6px 12px; 
@@ -17,17 +16,20 @@
         }
         .lang-btn.active { border-color: var(--accent-gold); color: var(--accent-gold); background: rgba(255, 215, 0, 0.1); }
 
-        /* Estilo das Seções */
         .feature-section { background: #121212; padding: 30px; border-radius: 15px; margin-bottom: 25px; line-height: 1.6; }
-        h2 { color: var(--accent-gold); }
+        h2 { color: var(--accent-gold); margin-top: 0; }
         .btn { 
-            display: inline-block; padding: 15px 30px; background-color: var(--accent-gold); 
+            display: inline-block; padding: 18px 36px; background-color: var(--accent-gold); 
             color: #000; text-decoration: none; font-weight: bold; border-radius: 8px; margin-top: 20px;
+            transition: transform 0.2s;
         }
+        .btn:hover { transform: scale(1.05); }
+        
         .lang-section { display: none; }
         .lang-section.active { display: block; }
         
-        blockquote { border-left: 4px solid var(--accent-gold); padding-left: 20px; color: #fff; font-style: italic; margin: 30px 0; }
+        blockquote { border-left: 4px solid var(--accent-gold); padding-left: 20px; color: #fff; font-style: italic; margin: 30px 0; font-size: 1.1rem; }
+        .badge { background: var(--accent-gold); color: #000; padding: 4px 12px; border-radius: 4px; font-weight: bold; font-size: 0.8rem; margin-bottom: 10px; display: inline-block; }
         footer { text-align: center; padding: 40px 20px; color: #666; font-size: 0.9rem; }
     </style>
 </head>
@@ -47,36 +49,63 @@
         
         <div id="pt" class="lang-section active">
             <div class="feature-section">
-                <h2>A Música te Turbina</h2>
-                <p>O <strong>RunTune</strong> é um rastreador de exercícios que transforma sua corrida em memórias musicais. Compatível com <strong>Spotify, Deezer, Amazon Music e Youtube Music</strong>.</p>
-                <blockquote>"Enquanto os outros apps dizem o quão rápido você correu, o RunTune mostra qual foi a sensação daquela corrida."</blockquote>
-                <p>Compatível com Android e relógios <strong>Wear OS</strong>.</p>
-                <div style="text-align: center;">
-                    <a href="https://groups.google.com/g/SEU-GRUPO" class="btn">PARTICIPAR DO TESTE BETA</a>
+                <span class="badge">BETA ABERTO</span>
+                <h2>O Diferencial Emocional</h2>
+                <p>Enquanto os outros apps ajudam a responder <strong>"O quão rápido eu corri?"</strong>, o RunTune responde a uma pergunta diferente e mais emocional: <strong>"Qual foi a sensação daquela corrida?"</strong></p>
+                <p>O RunTune transforma a trilha sonora de um elemento passageiro para um dado fundamental e permanente da atividade. Um diário de corridas que não é apenas sobre números, mas sobre memórias.</p>
+                <blockquote>"Uma nova camada de análise: veja no mapa onde sua música favorita começou e onde terminou. A música colorindo o seu trajeto."</blockquote>
+                
+                <h3>Disponibilidade e Requisitos</h3>
+                <ul style="color: var(--text-secondary);">
+                    <li><strong>Sistema:</strong> Android e relógios <strong>Wear OS</strong>.</li>
+                    <li><strong>Música:</strong> Spotify, Deezer, Amazon Music ou Youtube Music.</li>
+                </ul>
+                
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="https://groups.google.com/g/runtune-testers" class="btn">QUERO SER TESTADOR BETA</a>
+                    <p style="font-size: 0.8rem; color: #666; margin-top: 15px;">Ao entrar no grupo, o download será liberado para sua conta Google.</p>
                 </div>
             </div>
         </div>
 
         <div id="en" class="lang-section">
             <div class="feature-section">
-                <h2>Music Powers You</h2>
-                <p><strong>RunTune</strong> is a fitness tracker that turns your runs into musical memories. Works with <strong>Spotify, Deezer, Amazon Music, and Youtube Music</strong>.</p>
-                <blockquote>"While other apps tell you how fast you ran, RunTune shows you how that run felt."</blockquote>
-                <p>Compatible with Android and <strong>Wear OS</strong> smartwatches.</p>
-                <div style="text-align: center;">
-                    <a href="https://groups.google.com/g/SEU-GRUPO" class="btn">JOIN BETA TESTING</a>
+                <span class="badge">OPEN BETA</span>
+                <h2>The Emotional Edge</h2>
+                <p>While other apps help answer <strong>"How fast did I run?"</strong>, RunTune answers a different and more emotional question: <strong>"How did that run feel?"</strong></p>
+                <p>RunTune transforms your soundtrack from a passing element into fundamental and permanent activity data. A running diary that isn't just about numbers, but about memories.</p>
+                <blockquote>"A new layer of analysis: see on the map where your favorite song started and ended. Music coloring your path."</blockquote>
+                
+                <h3>Requirements</h3>
+                <ul style="color: var(--text-secondary);">
+                    <li><strong>System:</strong> Android and <strong>Wear OS</strong> smartwatches.</li>
+                    <li><strong>Music:</strong> Spotify, Deezer, Amazon Music, or Youtube Music.</li>
+                </ul>
+                
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="https://groups.google.com/g/runtune-testers" class="btn">BECOME A BETA TESTER</a>
+                    <p style="font-size: 0.8rem; color: #666; margin-top: 15px;">By joining the group, the download will be unlocked for your Google account.</p>
                 </div>
             </div>
         </div>
 
         <div id="es" class="lang-section">
             <div class="feature-section">
-                <h2>La Música te Impulsa</h2>
-                <p><strong>RunTune</strong> es un rastreador de ejercicios que convierte tus carreras en recuerdos musicales. Compatible con <strong>Spotify, Deezer, Amazon Music y Youtube Music</strong>.</p>
-                <blockquote>"Mientras otras apps te dicen qué tan rápido corriste, RunTune te muestra cómo se sintió esa carrera."</blockquote>
-                <p>Compatible con Android y relojes <strong>Wear OS</strong>.</p>
-                <div style="text-align: center;">
-                    <a href="https://groups.google.com/g/SEU-GRUPO" class="btn">UNIRSE AL TEST BETA</a>
+                <span class="badge">BETA ABIERTO</span>
+                <h2>El Diferencial Emocional</h2>
+                <p>Mientras que otras aplicaciones ayudan a responder <strong>"¿Qué tan rápido corrí?"</strong>, RunTune responde a una pregunta diferente y más emocional: <strong>"¿Cómo se sintió esa carrera?"</strong></p>
+                <p>RunTune transforma tu banda sonora de un elemento pasajero a un dato fundamental y permanente de la actividad. Un diario de carreras que no se trata solo de números, sino de recuerdos.</p>
+                <blockquote>"Una nueva capa de análisis: mira en el mapa dónde empezó y terminó tu canción favorita. La música coloreando tu trayecto."</blockquote>
+                
+                <h3>Requisitos</h3>
+                <ul style="color: var(--text-secondary);">
+                    <li><strong>Sistema:</strong> Android y relojes <strong>Wear OS</strong>.</li>
+                    <li><strong>Música:</strong> Spotify, Deezer, Amazon Music o Youtube Music.</li>
+                </ul>
+                
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="https://groups.google.com/g/runtune-testers" class="btn">QUIERO SER TESTADOR BETA</a>
+                    <p style="font-size: 0.8rem; color: #666; margin-top: 15px;">Al unirte al grupo, la descarga se desbloqueará para tu cuenta de Google.</p>
                 </div>
             </div>
         </div>
@@ -85,11 +114,11 @@
             <a href="instructions.html" style="color: var(--accent-gold); text-decoration: none; margin: 0 10px;">Manual</a>
             <a href="privacy.html" style="color: var(--accent-gold); text-decoration: none; margin: 0 10px;">Privacy Policy</a>
         </div>
-
     </div>
 
     <footer>
-        <p>&copy; 2026 RunTune. A música é a alma da corrida.</p>
+        <p>RunTune: Para quem entende que a música é a alma da corrida.</p>
+        <p>&copy; 2026 RunTune.</p>
     </footer>
 
     <script>
