@@ -10,7 +10,9 @@
         .container { max-width: 900px; margin: 0 auto; padding: 20px; }
         
         /* Navegação de Idiomas */
-        .lang-nav { text-align: center; padding: 15px; background: #121212; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #333; }
+        .lang-nav { text-align: center; padding: 15px; background: #121212; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #333; display: flex; justify-content: center; align-items: center; gap: 10px; }
+        .back-btn { background: none; border: 1px solid #444; color: #aaa; padding: 6px 12px; cursor: pointer; border-radius: 20px; transition: 0.3s; text-decoration: none; display: inline-block; position: absolute; left: 20px; }
+        .back-btn:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
         .lang-btn { background: none; border: 1px solid #444; color: #aaa; padding: 6px 12px; margin: 0 5px; cursor: pointer; border-radius: 20px; transition: 0.3s; }
         .lang-btn.active { border-color: var(--accent-gold); color: var(--accent-gold); background: rgba(255, 215, 0, 0.1); }
 
@@ -38,9 +40,12 @@
 <body>
 
     <nav class="lang-nav">
-        <button class="lang-btn" id="btn-pt" onclick="showLang('pt')">Português</button>
-        <button class="lang-btn" id="btn-en" onclick="showLang('en')">English</button>
-        <button class="lang-btn" id="btn-es" onclick="showLang('es')">Español</button>
+        <a href="index.html" class="back-btn">← Voltar</a>
+        <div>
+            <button class="lang-btn" id="btn-pt" onclick="showLang('pt')">Português</button>
+            <button class="lang-btn" id="btn-en" onclick="showLang('en')">English</button>
+            <button class="lang-btn" id="btn-es" onclick="showLang('es')">Español</button>
+        </div>
     </nav>
 
     <div class="container">
@@ -162,6 +167,14 @@
                 <h2>2.6 Celular: Detalhes do Exercício</h2>
                 <p>Ao abrir uma corrida salva, você acessa uma análise profunda dividida em quatro áreas principais:</p>
                 
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0;">
+                    <img src="img/C06-DetalhesCorrida1.jpeg" alt="Aba Resumo" class="screenshot" style="max-width: 250px;">
+                    <img src="img/C06-DetalhesCorrida2.jpeg" alt="Aba Setlist" class="screenshot" style="max-width: 250px;">
+                    <img src="img/C06-DetalhesCorrida3.jpeg" alt="Aba Voltas" class="screenshot" style="max-width: 250px;">
+                    <img src="img/C06-DetalhesCorrida4.jpeg" alt="Aba Mapa Musical" class="screenshot" style="max-width: 250px;">
+                </div>
+                <p class="img-caption">Quatro Abas de Análise do Exercício</p>
+                
                 <div class="mode-card">
                     <strong>📊 Análise por Abas</strong>
                     <ul>
@@ -187,6 +200,14 @@
                 <h2>2.7 Celular: Smart Setlist (Setlist Inteligente)</h2>
                 <p>O Smart Setlist utiliza inteligência de dados para cruzar sua performance física com seu histórico musical, criando a trilha sonora ideal para seus objetivos.</p>
                 
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0;">
+                    <img src="img/C07-SmartSetlist1.jpeg" alt="Smart Setlist - Meta" class="screenshot" style="max-width: 250px;">
+                    <img src="img/C07-SmartSetlist3.jpeg" alt="Smart Setlist - Lista Gerada" class="screenshot" style="max-width: 250px;">
+                    <img src="img/C07-SmartSetlist4.jpeg" alt="Smart Setlist - Avaliação" class="screenshot" style="max-width: 250px;">
+                    <img src="img/C07-SmartSetlist7.jpeg" alt="Smart Setlist - Confirmação" class="screenshot" style="max-width: 250px;">
+                </div>
+                <p class="img-caption">Fluxo completo de geração da Smart Setlist</p>
+                
                 <div class="mode-card">
                     <strong>🎯 Como funciona a Meta:</strong>
                     <p>Você define a <strong>distância planejada</strong> e o <strong>tempo desejado</strong>. O aplicativo analisa quais músicas costumam te dar mais energia (melhor pace) e gera uma setlist personalizada para te ajudar a manter o ritmo necessário.</p>
@@ -201,6 +222,13 @@
             <section class="feature-section">
                 <h2>3.1 Relógio: Tela Principal e Seleção</h2>
                 <p class="img-caption">Interface do RunTune para Wear OS</p>
+                
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0;">
+                    <img src="img/R01-TelaPrincipal1.png" alt="Seleção de atividade" class="screenshot" style="max-width: 220px;">
+                    <img src="img/R01-TelaPrincipal2.png" alt="Opções de atividades e histórico" class="screenshot" style="max-width: 220px;">
+                    <img src="img/R01-TelaPrincipal3.png" alt="Preparar música no relógio" class="screenshot" style="max-width: 220px;">
+                </div>
+                <p class="img-caption">Sequência de telas para preparar o treino diretamente no pulso</p>
                 
                 <p>A experiência no relógio foi desenhada para ser rápida e independente. Confira as opções disponíveis:</p>
                 <ul>
@@ -225,6 +253,13 @@
                 <h2>3.2 Relógio: Configurações</h2>
                 <p class="img-caption">Ajustes de Acessibilidade e Parâmetros de Treino</p>
                 
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0;">
+                    <img src="img/R02-TelaConfig1.png" alt="Ajuste de verbalização por KM" class="screenshot" style="max-width: 220px;">
+                    <img src="img/R02-TelaConfig2.png" alt="Vibração por KM" class="screenshot" style="max-width: 220px;">
+                    <img src="img/R02-TelaConfig3.png" alt="Tamanho da passada" class="screenshot" style="max-width: 220px;">
+                </div>
+                <p class="img-caption">Principais controles disponíveis diretamente no relógio</p>
+                
                 <p>Nesta tela, você ajusta o comportamento do RunTune diretamente no seu pulso:</p>
                 <ul>
                     <li><strong>Narração de Progresso:</strong> Ative esta opção para que o relógio narre seu desempenho (como distância e tempo) durante o exercício.</li>
@@ -239,6 +274,12 @@
                 <h2>3.3 Relógio: Histórico e Recuperação</h2>
                 <p class="img-caption">Gestão de Sincronização e Salvamento de Emergência</p>
                 
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0;">
+                    <img src="img/R03-TelaHistorico1.png" alt="Lista de envios pendentes" class="screenshot" style="max-width: 220px;">
+                    <img src="img/R03-TelaHistorico2.png" alt="Detalhes de corrida para reenviar" class="screenshot" style="max-width: 220px;">
+                </div>
+                <p class="img-caption">Gerencie corridas pendentes ou parcialmente salvas direto do relógio</p>
+                
                 <p>O histórico no relógio permite gerenciar seus treinos recentes e garante que você não perca dados em imprevistos:</p>
                 <ul>
                     <li><strong>Sincronização:</strong> Você pode optar por reenviar todas as corridas pendentes para o celular de uma vez, ou gerenciar cada uma individualmente (reenviar ou apagar).</li>
@@ -250,6 +291,13 @@
             <section class="feature-section">
                 <h2>3.4 Relógio: Tela de Exercício</h2>
                 <p class="img-caption">Interface de Monitoramento Ativo no Pulso</p>
+                
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0;">
+                    <img src="img/R04-TelaExercicio1.png" alt="Tela principal com tempo e distância" class="screenshot" style="max-width: 220px;">
+                    <img src="img/R04-TelaExercicio2.png" alt="Destaque secundário alternado" class="screenshot" style="max-width: 220px;">
+                    <img src="img/R04-TelaExercicio3.png" alt="Tela com botão Parar" class="screenshot" style="max-width: 220px;">
+                </div>
+                <p class="img-caption">Visualizações da corrida em andamento e controle de término</p>
                 
                 <p>Durante o treino, o relógio exibe suas métricas mais importantes de forma clara e acessível:</p>
                 <ul>
@@ -263,6 +311,12 @@
             <section class="feature-section">
                 <h2>3.5 Relógio: Resumo do Exercício</h2>
                 <p class="img-caption">Conclusão e Estatísticas Finais</p>
+                
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0;">
+                    <img src="img/R05-TelaResumo1.png" alt="Tela de resumo com botão OK" class="screenshot" style="max-width: 220px;">
+                    <img src="img/R05-TelaResumo2.png" alt="Resumo detalhado antes de finalizar" class="screenshot" style="max-width: 220px;">
+                </div>
+                <p class="img-caption">Visual do relatório imediato após encerrar o exercício</p>
                 
                 <p>Ao finalizar sua corrida, o relógio apresenta um resumo consolidado da sua performance antes de enviar os dados para o celular:</p>
                 <ul>
@@ -390,6 +444,14 @@
                 <h2>2.6 Phone: Exercise Details</h2>
                 <p>When opening a saved run, you access deep analysis divided into four main areas:</p>
                 
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0;">
+                    <img src="img/C06-DetalhesCorrida1.jpeg" alt="Summary Tab" class="screenshot" style="max-width: 250px;">
+                    <img src="img/C06-DetalhesCorrida2.jpeg" alt="Setlist Tab" class="screenshot" style="max-width: 250px;">
+                    <img src="img/C06-DetalhesCorrida3.jpeg" alt="Laps Tab" class="screenshot" style="max-width: 250px;">
+                    <img src="img/C06-DetalhesCorrida4.jpeg" alt="Musical Map Tab" class="screenshot" style="max-width: 250px;">
+                </div>
+                <p class="img-caption">Four Exercise Analysis Tabs</p>
+                
                 <div class="mode-card">
                     <strong>📊 Analysis by Tabs</strong>
                     <ul>
@@ -415,6 +477,14 @@
                 <h2>2.7 Phone: Smart Setlist</h2>
                 <p>Smart Setlist uses data intelligence to cross your physical performance with your music history, creating the ideal soundtrack for your goals.</p>
                 
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0;">
+                    <img src="img/C07-SmartSetlist1.jpeg" alt="Smart Setlist - Goal Setup" class="screenshot" style="max-width: 250px;">
+                    <img src="img/C07-SmartSetlist3.jpeg" alt="Smart Setlist - Generated List" class="screenshot" style="max-width: 250px;">
+                    <img src="img/C07-SmartSetlist4.jpeg" alt="Smart Setlist - Validation" class="screenshot" style="max-width: 250px;">
+                    <img src="img/C07-SmartSetlist7.jpeg" alt="Smart Setlist - Confirmation" class="screenshot" style="max-width: 250px;">
+                </div>
+                <p class="img-caption">Complete Smart Setlist generation flow</p>
+                
                 <div class="mode-card">
                     <strong>🎯 How the Goal Works:</strong>
                     <p>You define the <strong>planned distance</strong> and <strong>desired time</strong>. The app analyzes which songs tend to give you more energy (better pace) and generates a personalized setlist to help you maintain the necessary rhythm.</p>
@@ -429,6 +499,13 @@
             <section class="feature-section">
                 <h2>3.1 Watch: Main Screen & Selection</h2>
                 <p class="img-caption">RunTune Interface for Wear OS</p>
+                
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0;">
+                    <img src="img/R01-TelaPrincipal1.png" alt="Activity selection" class="screenshot" style="max-width: 220px;">
+                    <img src="img/R01-TelaPrincipal2.png" alt="Workout and history options" class="screenshot" style="max-width: 220px;">
+                    <img src="img/R01-TelaPrincipal3.png" alt="Prepare music on watch" class="screenshot" style="max-width: 220px;">
+                </div>
+                <p class="img-caption">Sequence of screens to prepare the workout directly on the watch</p>
                 
                 <p>The watch experience was designed to be fast and independent. Check out the available options:</p>
                 <ul>
@@ -453,6 +530,13 @@
                 <h2>3.2 Watch: Settings</h2>
                 <p class="img-caption">Accessibility Settings and Training Parameters</p>
                 
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0;">
+                    <img src="img/R02-TelaConfig1.png" alt="Voice per KM control" class="screenshot" style="max-width: 220px;">
+                    <img src="img/R02-TelaConfig2.png" alt="Vibration per KM control" class="screenshot" style="max-width: 220px;">
+                    <img src="img/R02-TelaConfig3.png" alt="Stride length adjustment" class="screenshot" style="max-width: 220px;">
+                </div>
+                <p class="img-caption">Key controls available directly on the watch</p>
+                
                 <p>On this screen, you adjust RunTune's behavior directly on your wrist:</p>
                 <ul>
                     <li><strong>Progress Narration:</strong> Enable this option so the watch narrates your performance (like distance and time) during the workout.</li>
@@ -467,6 +551,12 @@
                 <h2>3.3 Watch: History & Recovery</h2>
                 <p class="img-caption">Sync Management and Emergency Backup</p>
                 
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0;">
+                    <img src="img/R03-TelaHistorico1.png" alt="Pending runs list" class="screenshot" style="max-width: 220px;">
+                    <img src="img/R03-TelaHistorico2.png" alt="Run details to resend" class="screenshot" style="max-width: 220px;">
+                </div>
+                <p class="img-caption">Manage pending runs or partial saves directly on the watch</p>
+                
                 <p>The watch history allows managing your recent workouts and ensures you don't lose data in unexpected situations:</p>
                 <ul>
                     <li><strong>Sync:</strong> You can choose to resend all pending runs to your phone at once, or manage each one individually (resend or delete).</li>
@@ -478,6 +568,13 @@
             <section class="feature-section">
                 <h2>3.4 Watch: Workout Screen</h2>
                 <p class="img-caption">Active Monitoring Interface on Your Wrist</p>
+                
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0;">
+                    <img src="img/R04-TelaExercicio1.png" alt="Main screen with time and distance" class="screenshot" style="max-width: 220px;">
+                    <img src="img/R04-TelaExercicio2.png" alt="Secondary highlight switch" class="screenshot" style="max-width: 220px;">
+                    <img src="img/R04-TelaExercicio3.png" alt="Stop button view" class="screenshot" style="max-width: 220px;">
+                </div>
+                <p class="img-caption">Workout in progress views and finish control</p>
                 
                 <p>During the workout, the watch displays your most important metrics clearly and accessibly:</p>
                 <ul>
@@ -491,6 +588,12 @@
             <section class="feature-section">
                 <h2>3.5 Watch: Workout Summary</h2>
                 <p class="img-caption">Conclusion and Final Statistics</p>
+                
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0;">
+                    <img src="img/R05-TelaResumo1.png" alt="Summary screen with OK button" class="screenshot" style="max-width: 220px;">
+                    <img src="img/R05-TelaResumo2.png" alt="Detailed summary before finishing" class="screenshot" style="max-width: 220px;">
+                </div>
+                <p class="img-caption">Immediate report shown right after ending the workout</p>
                 
                 <p>When finishing your run, the watch presents a consolidated summary of your performance before sending data to your phone:</p>
                 <ul>
@@ -618,6 +721,14 @@
                 <h2>2.6 Celular: Detalles del Ejercicio</h2>
                 <p>Al abrir una carrera guardada, accedes a un análisis profundo dividido en cuatro áreas principales:</p>
                 
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0;">
+                    <img src="img/C06-DetalhesCorrida1.jpeg" alt="Pestaña Resumen" class="screenshot" style="max-width: 250px;">
+                    <img src="img/C06-DetalhesCorrida2.jpeg" alt="Pestaña Setlist" class="screenshot" style="max-width: 250px;">
+                    <img src="img/C06-DetalhesCorrida3.jpeg" alt="Pestaña Vueltas" class="screenshot" style="max-width: 250px;">
+                    <img src="img/C06-DetalhesCorrida4.jpeg" alt="Pestaña Mapa Musical" class="screenshot" style="max-width: 250px;">
+                </div>
+                <p class="img-caption">Cuatro Pestañas de Análisis del Ejercicio</p>
+                
                 <div class="mode-card">
                     <strong>📊 Análisis por Pestañas</strong>
                     <ul>
@@ -643,6 +754,14 @@
                 <h2>2.7 Celular: Smart Setlist (Lista Inteligente)</h2>
                 <p>El Smart Setlist utiliza inteligencia de datos para cruzar tu rendimiento físico con tu historial musical, creando la banda sonora ideal para tus objetivos.</p>
                 
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0;">
+                    <img src="img/C07-SmartSetlist1.jpeg" alt="Smart Setlist - Meta" class="screenshot" style="max-width: 250px;">
+                    <img src="img/C07-SmartSetlist3.jpeg" alt="Smart Setlist - Lista Generada" class="screenshot" style="max-width: 250px;">
+                    <img src="img/C07-SmartSetlist4.jpeg" alt="Smart Setlist - Evaluación" class="screenshot" style="max-width: 250px;">
+                    <img src="img/C07-SmartSetlist7.jpeg" alt="Smart Setlist - Confirmación" class="screenshot" style="max-width: 250px;">
+                </div>
+                <p class="img-caption">Flujo completo de generación del Smart Setlist</p>
+                
                 <div class="mode-card">
                     <strong>🎯 Cómo funciona la Meta:</strong>
                     <p>Defines la <strong>distancia planificada</strong> y el <strong>tiempo deseado</strong>. La aplicación analiza qué músicas suelen darte más energía (mejor pace) y genera una setlist personalizada para ayudarte a mantener el ritmo necesario.</p>
@@ -657,6 +776,13 @@
             <section class="feature-section">
                 <h2>3.1 Reloj: Pantalla Principal y Selección</h2>
                 <p class="img-caption">Interfaz de RunTune para Wear OS</p>
+                
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0;">
+                    <img src="img/R01-TelaPrincipal1.png" alt="Selección de actividad" class="screenshot" style="max-width: 220px;">
+                    <img src="img/R01-TelaPrincipal2.png" alt="Opciones de actividades e historial" class="screenshot" style="max-width: 220px;">
+                    <img src="img/R01-TelaPrincipal3.png" alt="Preparar música en el reloj" class="screenshot" style="max-width: 220px;">
+                </div>
+                <p class="img-caption">Secuencia de pantallas para preparar el entrenamiento directamente en la muñeca</p>
                 
                 <p>La experiencia en el reloj fue diseñada para ser rápida e independiente. Revisa las opciones disponibles:</p>
                 <ul>
@@ -681,6 +807,13 @@
                 <h2>3.2 Reloj: Configuración</h2>
                 <p class="img-caption">Ajustes de Accesibilidad y Parámetros de Entrenamiento</p>
                 
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0;">
+                    <img src="img/R02-TelaConfig1.png" alt="Control de verbalización por KM" class="screenshot" style="max-width: 220px;">
+                    <img src="img/R02-TelaConfig2.png" alt="Control de vibración por KM" class="screenshot" style="max-width: 220px;">
+                    <img src="img/R02-TelaConfig3.png" alt="Ajuste del tamaño de zancada" class="screenshot" style="max-width: 220px;">
+                </div>
+                <p class="img-caption">Principales controles disponibles directamente en el reloj</p>
+                
                 <p>En esta pantalla, ajustas el comportamiento de RunTune directamente en tu muñeca:</p>
                 <ul>
                     <li><strong>Narración de Progreso:</strong> Activa esta opción para que el reloj narre tu desempeño (como distancia y tiempo) durante el ejercicio.</li>
@@ -695,6 +828,12 @@
                 <h2>3.3 Reloj: Historial y Recuperación</h2>
                 <p class="img-caption">Gestión de Sincronización y Guardado de Emergencia</p>
                 
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0;">
+                    <img src="img/R03-TelaHistorico1.png" alt="Lista de envíos pendientes" class="screenshot" style="max-width: 220px;">
+                    <img src="img/R03-TelaHistorico2.png" alt="Detalles de la corrida para reenviar" class="screenshot" style="max-width: 220px;">
+                </div>
+                <p class="img-caption">Administra corridas pendientes o parciales directamente en el reloj</p>
+                
                 <p>El historial en el reloj permite gestionar tus entrenamientos recientes y garantiza que no pierdas datos en imprevistos:</p>
                 <ul>
                     <li><strong>Sincronización:</strong> Puedes optar por reenviar todas las carreras pendientes al celular de una vez, o gestionar cada una individualmente (reenviar o borrar).</li>
@@ -706,6 +845,13 @@
             <section class="feature-section">
                 <h2>3.4 Reloj: Pantalla de Ejercicio</h2>
                 <p class="img-caption">Interfaz de Monitoreo Activo en la Muñeca</p>
+                
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0;">
+                    <img src="img/R04-TelaExercicio1.png" alt="Pantalla principal con tiempo y distancia" class="screenshot" style="max-width: 220px;">
+                    <img src="img/R04-TelaExercicio2.png" alt="Cambio de destaque secundario" class="screenshot" style="max-width: 220px;">
+                    <img src="img/R04-TelaExercicio3.png" alt="Pantalla con botón Parar" class="screenshot" style="max-width: 220px;">
+                </div>
+                <p class="img-caption">Vistas de la corrida en progreso y control para finalizar</p>
                 
                 <p>Durante el entrenamiento, el reloj muestra tus métricas más importantes de forma clara y accesible:</p>
                 <ul>
@@ -719,6 +865,12 @@
             <section class="feature-section">
                 <h2>3.5 Reloj: Resumen del Ejercicio</h2>
                 <p class="img-caption">Conclusión y Estadísticas Finales</p>
+                
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0;">
+                    <img src="img/R05-TelaResumo1.png" alt="Pantalla de resumen con botón OK" class="screenshot" style="max-width: 220px;">
+                    <img src="img/R05-TelaResumo2.png" alt="Resumen detallado antes de finalizar" class="screenshot" style="max-width: 220px;">
+                </div>
+                <p class="img-caption">Reporte inmediato mostrado al terminar el ejercicio</p>
                 
                 <p>Al finalizar tu carrera, el reloj presenta un resumen consolidado de tu rendimiento antes de enviar los datos al celular:</p>
                 <ul>
