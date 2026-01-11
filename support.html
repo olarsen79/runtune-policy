@@ -4,45 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suporte - RunTune</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        :root { --accent-gold: #FFD700; --bg-card: #121212; --text-primary: #fff; --text-secondary: #ccc; }
+        body { background-color: #000; font-family: sans-serif; margin: 0; padding: 0; color: var(--text-primary); }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        
+        /* Navegação de Idiomas */
+        .lang-nav { text-align: center; padding: 15px; background: #121212; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #333; }
+        .lang-btn { background: none; border: 1px solid #444; color: #aaa; padding: 6px 12px; margin: 0 5px; cursor: pointer; border-radius: 20px; transition: 0.3s; }
+        .lang-btn.active { border-color: var(--accent-gold); color: var(--accent-gold); background: rgba(255, 215, 0, 0.1); }
+
+        .lang-section { display: none; }
+        .lang-section.active { display: block; }
+
+        header { text-align: center; padding: 30px 20px; border-bottom: 2px solid var(--accent-gold); }
+        .feature-section { background: var(--bg-card); padding: 40px; border-radius: 15px; margin-top: 30px; border: 1px solid #222; text-align: center; min-height: 400px; display: flex; flex-direction: column; justify-content: center; }
+        
+        .contact-box { background-color: #000; padding: 30px; border-radius: 15px; border: 1px solid #333; display: inline-block; margin: 0 auto; }
+        .email-link { color: #fff; font-size: 1.5rem; text-decoration: none; word-break: break-all; }
+        .back-link { color: var(--accent-gold); text-decoration: none; font-weight: bold; display: inline-block; margin-top: 10px; }
+        
+        footer { text-align: center; padding: 40px; color: #666; font-size: 0.9rem; }
+    </style>
 </head>
 <body>
 
-    <header style="text-align: center; padding: 30px 20px; border-bottom: 2px solid var(--accent-gold);">
+    <nav class="lang-nav">
+        <button class="lang-btn" id="btn-pt" onclick="showLang('pt')">Português</button>
+        <button class="lang-btn" id="btn-en" onclick="showLang('en')">English</button>
+        <button class="lang-btn" id="btn-es" onclick="showLang('es')">Español</button>
+    </nav>
+
+    <header>
         <img src="img/logo_header.png" alt="RunTune Logo" style="max-width: 250px; height: auto; margin-bottom: 10px;">
-        <p style="margin-top: 0; color: #ccc;">Central de Ajuda</p>
-        <a href="index.html" style="color: var(--accent-gold); text-decoration: none; font-weight: bold;">&larr; Voltar para Início</a>
     </header>
 
     <div class="container">
 
-        <div class="feature-section" style="text-align: center; min-height: 400px; display: flex; flex-direction: column; justify-content: center;">
-            
-            <h2 style="margin-top: 0;">Fale com o Desenvolvedor</h2>
-            <p style="font-size: 1.1rem; color: #ddd; max-width: 600px; margin: 0 auto 30px auto;">
-                O RunTune está em fase de evolução constante. Se você encontrou um bug, tem uma ideia de funcionalidade 
-                ou quer apenas compartilhar como o app impactou suas corridas, entre em contato direto.
-            </p>
-
-            <div style="background-color: #000; padding: 30px; border-radius: 15px; border: 1px solid #333; display: inline-block; margin: 0 auto;">
-                <p style="color: var(--accent-gold); font-weight: bold; margin-bottom: 10px;">E-mail Oficial</p>
-                <a href="mailto:larsentech25@gmail.com" style="color: #fff; font-size: 1.5rem; text-decoration: none; word-break: break-all;">
-                    larsentech25@gmail.com
-                </a>
+        <div id="pt" class="lang-section active">
+            <div class="feature-section">
+                <h2 style="margin-top: 0; color: var(--accent-gold);">Fale com o Desenvolvedor</h2>
+                <p style="font-size: 1.1rem; color: #ddd; max-width: 600px; margin: 0 auto 30px auto;">
+                    O RunTune está em fase de evolução constante. Se você encontrou um bug, tem uma ideia de funcionalidade 
+                    ou quer apenas compartilhar como o app impactou suas corridas, entre em contato direto.
+                </p>
+                <div class="contact-box">
+                    <p style="color: var(--accent-gold); font-weight: bold; margin-bottom: 10px;">E-mail Oficial</p>
+                    <a href="mailto:larsentech25@gmail.com" class="email-link">larsentech25@gmail.com</a>
+                </div>
+                <p style="margin-top: 30px;"><a href="index.html" class="back-link">&larr; Voltar para o Início</a></p>
             </div>
+        </div>
 
-            <p style="margin-top: 30px; color: #888; font-size: 0.9rem;">
-                Respondido por Otavio (LarsenTech).<br>
-                Tempo médio de resposta: 24h.
-            </p>
+        <div id="en" class="lang-section">
+            <div class="feature-section">
+                <h2 style="margin-top: 0; color: var(--accent-gold);">Contact the Developer</h2>
+                <p style="font-size: 1.1rem; color: #ddd; max-width: 600px; margin: 0 auto 30px auto;">
+                    RunTune is constantly evolving. If you found a bug, have a feature idea, or just want to share how the app impacted your runs, please get in touch directly.
+                </p>
+                <div class="contact-box">
+                    <p style="color: var(--accent-gold); font-weight: bold; margin-bottom: 10px;">Official Email</p>
+                    <a href="mailto:larsentech25@gmail.com" class="email-link">larsentech25@gmail.com</a>
+                </div>
+                <p style="margin-top: 30px;"><a href="index.html" class="back-link">&larr; Back to Home</a></p>
+            </div>
+        </div>
 
+        <div id="es" class="lang-section">
+            <div class="feature-section">
+                <h2 style="margin-top: 0; color: var(--accent-gold);">Contacta al Desarrollador</h2>
+                <p style="font-size: 1.1rem; color: #ddd; max-width: 600px; margin: 0 auto 30px auto;">
+                    RunTune está en constante evolución. Si encontraste un error, tienes una idea de funcionalidad o simplemente quieres compartir cómo la aplicación impactó tus carreras, contáctanos directamente.
+                </p>
+                <div class="contact-box">
+                    <p style="color: var(--accent-gold); font-weight: bold; margin-bottom: 10px;">Correo Electrónico Oficial</p>
+                    <a href="mailto:larsentech25@gmail.com" class="email-link">larsentech25@gmail.com</a>
+                </div>
+                <p style="margin-top: 30px;"><a href="index.html" class="back-link">&larr; Volver al Inicio</a></p>
+            </div>
         </div>
 
     </div>
 
     <footer>
-        <p>&copy; 2025 RunTune. A música te turbina.</p>
+        <p>&copy; 2026 RunTune. The music powers your run.</p>
     </footer>
 
+    <script>
+        function showLang(lang) {
+            document.querySelectorAll('.lang-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            
+            const selectedSection = document.getElementById(lang);
+            const selectedBtn = document.getElementById('btn-' + lang);
+            
+            if(selectedSection && selectedBtn) {
+                selectedSection.classList.add('active');
+                selectedBtn.classList.add('active');
+            }
+        }
+
+        window.onload = function() {
+            const userLang = navigator.language || navigator.userLanguage; 
+            if (userLang.startsWith('pt')) showLang('pt');
+            else if (userLang.startsWith('es')) showLang('es');
+            else showLang('en');
+        }
+    </script>
 </body>
 </html>
